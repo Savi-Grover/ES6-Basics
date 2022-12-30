@@ -121,17 +121,25 @@
 
   //---------------------FUNCTIONS for array of objects
 
-    const jobs=[
-    { id:1, isActive: true },
-    { id:2, isActive: true },
-    { id:3, isActive: false },
-    ];
+    // const jobs=[
+    // { id:1, isActive: true },
+    // { id:2, isActive: true },
+    // { id:3, isActive: false },
+    // ];
     
-    //const activejobs=jobs.filter(function(jobs) {return jobs.isActive;}) //js format
-    const activejobs1=jobs.filter(jobs=> jobs.isActive);
-    console.log(activejobs1);
+    // //const activejobs=jobs.filter(function(jobs) {return jobs.isActive;}) //js format
+    // const activejobs1=jobs.filter(jobs=> jobs.isActive);
+    // console.log(activejobs1);
 
+    ///-----------Array map  - used for rendering/traversal lists of array 
 
+    const colors= ['red','green','blue'];
+    
+    //const items= colors.map(color=> '<li>'  + color + '</li>'); //js format
+    
+    colors.map(color=> `<li>${color}</li>`);
+    console.log(colors);   // ${color} - called template literal
+    
 
 
 
