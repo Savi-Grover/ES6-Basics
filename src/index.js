@@ -285,7 +285,7 @@
 
 ///--------------------------MODULES- SEGREGATION OF PARENT _CHILD CLASSES IS CALLED MODULERIZATION
 
-import { Teacher } from "./teacher"
+import Teacher from "./teacher"
   const teacher=new Teacher('Laila', 'Msc');
 teacher.walk();
 
