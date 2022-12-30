@@ -159,36 +159,47 @@
 
 //-----------------------REST operator
 
-const sum=(a,b)=>{
-console.log(a+b);
-}
-sum(3,3);
-//o/p- 6
+// const sum=(a,b)=>{
+// console.log(a+b);
+// }
+// sum(3,3);
+// //o/p- 6
 
-//but if more than 2 params- still op is 6 because 
-sum(3,3,7,5,6,2,66);
-//o/p - 6
+// //but if more than 2 params- still op is 6 because 
+// sum(3,3,7,5,6,2,66);
+// //o/p - 6
 
-//to show  all numbers- we use ...
-const sum1=(...a)=>{
-  console.log(...a);
-}
-sum1(1,2,3,33,555);
-//o/p- array of numbers -1 2 3 33 555 
+// //to show  all numbers- we use ...
+// const sum1=(...a)=>{
+//   console.log(...a);
+// }
+// sum1(1,2,3,33,555);
+// //o/p- array of numbers -1 2 3 33 555 
 
-//to add all numbers
-const sumAll=(...a)=>{
-//console.log(...a);
-let total=0;
-for ( let i of a){
-  total+=i;
-  //console.log(total);
-}
-console.log(total);
-}
-sumAll(1,2,3,4,5);
+// //to add all numbers
+// const sumAll=(...a)=>{
+// //console.log(...a);
+// let total=0;
+// for ( let i of a){
+//   total+=i;
+//   //console.log(total);
+// }
+// console.log(total);
+// }
+// sumAll(1,2,3,4,5);
 
 
+//---------------------------rest
+
+const sum=(a,b,c,...d)=>{
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  console.log(d.length);
+  console.log(...d);
+};
+sum(2,4,6,1,"eeee",5,5,"c");
 
 
 
