@@ -191,20 +191,32 @@
 
 //---------------------------rest
 
-const sum=(a,b,c,...d)=>{
-  console.log(a);
-  console.log(b);
-  console.log(c);
-  console.log(d);
-  console.log(d.length);
-  console.log(...d);
-};
-sum(2,4,6,1,"eeee",5,5,"c");
+// const sum=(a,b,c,...d)=>{
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+//   console.log(d);
+//   console.log(d.length);
+//   console.log(...d);
+// };
+// sum(2,4,6,1,"eeee",5,5,"c");
 
 
+//------------------------------DEFAULT PARAMETER 
 
+const multiply=(a,b)=>{
+  return a*b;
+}
+console.log(multiply(3,3));
+//o/p=9
+//but if we forget 1 param and alllocate a default value of param 
+//to be used in method
 
-
+const multiply1=(a,b=2)=>{
+  return a*b;
+}
+console.log(multiply1(3));
+//o/p=6
 
 
 
