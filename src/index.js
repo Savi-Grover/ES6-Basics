@@ -204,20 +204,55 @@
 
 //------------------------------DEFAULT PARAMETER 
 
-const multiply=(a,b)=>{
-  return a*b;
-}
-console.log(multiply(3,3));
-//o/p=9
-//but if we forget 1 param and alllocate a default value of param 
-//to be used in method
+// const multiply=(a,b)=>{
+//   return a*b;
+// }
+// console.log(multiply(3,3));
+// //o/p=9
+// //but if we forget 1 param and alllocate a default value of param 
+// //to be used in method
 
-const multiply1=(a,b=2)=>{
-  return a*b;
-}
-console.log(multiply1(3));
-//o/p=6
+// const multiply1=(a,b=2)=>{
+//   return a*b;
+// }
+// console.log(multiply1(3));
+// //o/p=6
 
+    //---------------------CLASSES
+
+    //Suppose we have 2 objects: utilizing same data & method: - need redeclaration & correction at multiple places - so we will make 
+    //classes out of common data & methods
+
+    const person1 ={
+    Name: "Mosh",
+    walk(){
+    console.log("walk");
+    
+    }
+    };
+    
+    const person2= {
+      Name: "Mosh",
+      walk(){
+      console.log("walk");
+      }
+    };
+
+    class Person3{
+      constructor(name){
+      this.name= name;
+      }
+      walk(){
+      console.log("walk");
+      
+      }
+      
+      }
+      
+      const person= new Person3('Savi');           //calling constructor above
+      person.walk();
+      
+    
 
 
 
