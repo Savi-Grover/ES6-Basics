@@ -143,19 +143,51 @@
 
     //-----------Spreading / concatenate 2 arrays / .. . operator
 
-const first = [1,2,3];
-const second = [4,5,6];
+// const first = [1,2,3];
+// const second = [4,5,6];
 
-//const combined = first.concat(second); //js
-const combined1 = [...first, ...second];
-console.log(combined1);
+// //const combined = first.concat(second); //js
+// const combined1 = [...first, ...second];
+// console.log(combined1);
 
-//---------------Also helps in cloning a array:
+// //---------------Also helps in cloning a array:
 
-const array1=[1,2,3];
-const clone= [...array1 ];
-console.log(array1);
-console.log(clone);
+// const array1=[1,2,3];
+// const clone= [...array1 ];
+// console.log(array1);
+// console.log(clone);
+
+//-----------------------REST operator
+
+const sum=(a,b)=>{
+console.log(a+b);
+}
+sum(3,3);
+//o/p- 6
+
+//but if more than 2 params- still op is 6 because 
+sum(3,3,7,5,6,2,66);
+//o/p - 6
+
+//to show  all numbers- we use ...
+const sum1=(...a)=>{
+  console.log(...a);
+}
+sum1(1,2,3,33,555);
+//o/p- array of numbers -1 2 3 33 555 
+
+//to add all numbers
+const sumAll=(...a)=>{
+//console.log(...a);
+let total=0;
+for ( let i of a){
+  total+=i;
+  //console.log(total);
+}
+console.log(total);
+}
+sumAll(1,2,3,4,5);
+
 
 
 
