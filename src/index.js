@@ -223,35 +223,66 @@
     //Suppose we have 2 objects: utilizing same data & method: - need redeclaration & correction at multiple places - so we will make 
     //classes out of common data & methods
 
-    const person1 ={
-    Name: "Mosh",
-    walk(){
-    console.log("walk");
+    // const person1 ={
+    // Name: "Mosh",
+    // walk(){
+    // console.log("walk");
+    
+    // }
+    // };
+    
+    // const person2= {
+    //   Name: "Mosh",
+    //   walk(){
+    //   console.log("walk");
+    //   }
+    // };
+
+    // class Person3{
+    //   constructor(name){
+    //   this.name= name;
+    //   }
+    //   walk(){
+    //   console.log("walk");
+      
+    //   }
+      
+    //   }
+      
+    //   const person= new Person3('Savi');           //calling constructor above
+    //   person.walk();
+      
+
+//------------------------------INHERITENCE & SUPER constructor ( child class always calls super const of parent class)
+
+class Person{
+  constructor(name){
+  this.name= name;
+  }
+  walk(){
+  console.log("walk");
+  
+  }
+  
+  }
+  
+class Teacher extends Person {
+    constructor(name,degree){
+      super(name);  //will grab value of name from parent class
+      this.degree= degree;
+    }
+    teach(){
+    console.log('teach');
+    }
     
     }
-    };
     
-    const person2= {
-      Name: "Mosh",
-      walk(){
-      console.log("walk");
-      }
-    };
+    const teacher=new Teacher('Laila', 'Msc');
+    console.log(teacher.name);
+  teacher.walk(); 
 
-    class Person3{
-      constructor(name){
-      this.name= name;
-      }
-      walk(){
-      console.log("walk");
-      
-      }
-      
-      }
-      
-      const person= new Person3('Savi');           //calling constructor above
-      person.walk();
-      
+  //o/p- Laila, walk
+  
     
 
 
