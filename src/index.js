@@ -33,17 +33,36 @@
 //      mumbai
 
 //--------------------OBJECTS
-const person ={
-name: 'Savi',
-walk(){},
-talk(){return 'savi can talk'}
-};
-const name1=person.name;
-console.log(name1);
-console.log(person.talk());
+// const person ={
+// name: 'Savi',
+// walk(){},
+// talk(){return 'savi can talk'}
+// };
+// const name1=person.name;
+// console.log(name1);
+// console.log(person.talk());
 
-//o/p - Savi
-//      savi can talk
+// //o/p - Savi
+// //      savi can talk
+
+//--------------object destructuring 
+const address ={
+	Street: 'a',
+	City: 'b',
+	Country: 'c'
+
+};
+
+const street = address.Street;
+const city = address.City;
+const country = address.Country;
+
+console.log(street);
+console.log(address.Street);
+console.log(city);
+console.log(country);
+
+console.log(address);
 
 
 
