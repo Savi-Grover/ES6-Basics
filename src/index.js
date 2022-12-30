@@ -21,16 +21,29 @@
 //const x=5;
 //x=2;   //error - x is a constant
 
-const place="mumbai";
-if(1){
-  const place="mysore";
-  console.log(place);
-}
+// const place="mumbai";
+// if(1){
+//   const place="mysore";
+//   console.log(place);
+// }
 
-console.log(place);
+// console.log(place);
 
 //o/p - mysore
 //      mumbai
+
+//--------------------OBJECTS
+const person ={
+name: 'Savi',
+walk(){},
+talk(){return 'savi can talk'}
+};
+const name1=person.name;
+console.log(name1);
+console.log(person.talk());
+
+//o/p - Savi
+//      savi can talk
 
 
 
