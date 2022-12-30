@@ -46,23 +46,62 @@
 // //      savi can talk
 
 //--------------object destructuring 
-const address ={
-	Street: 'a',
-	City: 'b',
-	Country: 'c'
+// const address ={
+// 	Street: 'a',
+// 	City: 'b',
+// 	Country: 'c'
 
-};
+// };
 
-const street = address.Street;
-const city = address.City;
-const country = address.Country;
+// const street = address.Street;
+// const city = address.City;
+// const country = address.Country;
 
-console.log(street);
-console.log(address.Street);
-console.log(city);
-console.log(country);
+// console.log(street);
+// console.log(address.Street);
+// console.log(city);
+// console.log(country);
 
-console.log(address);
+// console.log(address);
+
+//-------------------this keyword
+const person1 ={
+  name:"Savi",
+  walk(){
+    console.log(this);
+  },
+  };
+person1.walk();  
+//o/p- {"name": "Savi", walk: f}
+
+//-----BUt this keyword behaves different if called it as a reference to an object
+const person2 ={
+  name:"Savi",
+  walk(){
+    console.log(this);
+  },
+  };
+const act=person2.walk();
+console.log(act);
+
+//Output -      {"name": "Savi", walk: f}
+//             undefined - because there is no binding
+
+//-------------binding to THIS 
+
+const person3 ={
+  name:"Savi",
+  walk(){
+    console.log(this);
+  },
+  };
+
+person3.walk();     // function in js are objects
+const walk= person3.walk.bind(person3);
+walk();  //call above const walk
+
+//o/p-   {"name": "Savi", walk: f}
+//       {"name": "Savi", walk: f}
 
 
 
