@@ -48,6 +48,7 @@
 //    number*number
 
   //  console.log(square1(5));
+
   //FUNCTIONS for array of objects
   //  const jobs=[
   //   { id:1, isActive: true },

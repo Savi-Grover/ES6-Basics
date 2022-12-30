@@ -255,33 +255,40 @@
 
 //------------------------------INHERITENCE & SUPER constructor ( child class always calls super const of parent class)
 
-class Person{
-  constructor(name){
-  this.name= name;
-  }
-  walk(){
-  console.log("walk");
+// class Person{
+//   constructor(name){
+//   this.name= name;
+//   }
+//   walk(){
+//   console.log("walk");
   
-  }
+//   }
   
-  }
+//   }
   
-class Teacher extends Person {
-    constructor(name,degree){
-      super(name);  //will grab value of name from parent class
-      this.degree= degree;
-    }
-    teach(){
-    console.log('teach');
-    }
+// class Teacher extends Person {
+//     constructor(name,degree){
+//       super(name);  //will grab value of name from parent class
+//       this.degree= degree;
+//     }
+//     teach(){
+//     console.log('teach');
+//     }
     
-    }
+//     }
     
-    const teacher=new Teacher('Laila', 'Msc');
-    console.log(teacher.name);
-  teacher.walk(); 
+//     const teacher=new Teacher('Laila', 'Msc');
+//     console.log(teacher.name);
+//   teacher.walk(); 
 
-  //o/p- Laila, walk
+//   //o/p- Laila, walk
+
+///--------------------------MODULES- SEGREGATION OF PARENT _CHILD CLASSES IS CALLED MODULERIZATION
+
+import { Teacher } from "./teacher"
+  const teacher=new Teacher('Laila', 'Msc');
+teacher.walk();
+
   
     
 
