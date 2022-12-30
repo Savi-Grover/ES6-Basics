@@ -109,15 +109,28 @@
 //----------------------- function in js are objects
 
 //js format
-const square = function(number){
-return number*number
-}
-console.log(square(7));
+// const square = function(number){
+// return number*number
+// }
+// console.log(square(7));
 
 //es 6 format for single param function - remove function kyword, remove(), add=>, remove {}, remove return
-const square1 = number=>
-number*number
-console.log(square1(5));
+// const square1 = number=>
+// number*number
+// console.log(square1(5));
+
+  //---------------------FUNCTIONS for array of objects
+
+    const jobs=[
+    { id:1, isActive: true },
+    { id:2, isActive: true },
+    { id:3, isActive: false },
+    ];
+    
+    //const activejobs=jobs.filter(function(jobs) {return jobs.isActive;}) //js format
+    const activejobs1=jobs.filter(jobs=> jobs.isActive);
+    console.log(activejobs1);
+
 
 
 
