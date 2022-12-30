@@ -285,13 +285,35 @@
 
 ///--------------------------MODULES- SEGREGATION OF PARENT _CHILD CLASSES IS CALLED MODULERIZATION
 
-import Teacher from "./teacher"
-  const teacher=new Teacher('Laila', 'Msc');
-teacher.walk();
+// import Teacher from "./teacher"
+//   const teacher=new Teacher('Laila', 'Msc');
+// teacher.walk();
 
+///----------------------------------promises
+
+
+let p = new Promise((resolve,reject)=>{
+let a = 1+1
+if (a ===2){
+  resolve('success')
   
-    
+}
+else{
+  reject('failed')
+ 
+}
 
+})
+
+p.then((message)=>{
+console.log('This is in then   '  +message)
+}).catch((message)=>{
+ 
+  console.log('This is in Catch  '  +message)
+})
+
+    
+//o/p- This is in then   success
 
 
 
