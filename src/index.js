@@ -133,13 +133,30 @@
 
     ///-----------Array map  - used for rendering/traversal lists of array 
 
-    const colors= ['red','green','blue'];
+    // const colors= ['red','green','blue'];
     
-    //const items= colors.map(color=> '<li>'  + color + '</li>'); //js format
+    // //const items= colors.map(color=> '<li>'  + color + '</li>'); //js format
     
-    colors.map(color=> `<li>${color}</li>`);
-    console.log(colors);   // ${color} - called template literal
+    // colors.map(color=> `<li>${color}</li>`);
+    // console.log(colors);   // ${color} - called template literal
     
+
+    //-----------Spreading / concatenate 2 arrays / .. . operator
+
+const first = [1,2,3];
+const second = [4,5,6];
+
+//const combined = first.concat(second); //js
+const combined1 = [...first, ...second];
+console.log(combined1);
+
+//---------------Also helps in cloning a array:
+
+const array1=[1,2,3];
+const clone= [...array1 ];
+console.log(array1);
+console.log(clone);
+
 
 
 
