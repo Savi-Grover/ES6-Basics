@@ -18,8 +18,20 @@
 // sayHello1();
 
 //--------------CONST KEYWORD
-const x=5;
+//const x=5;
 //x=2;   //error - x is a constant
+
+const place="mumbai";
+if(1){
+  const place="mysore";
+  console.log(place);
+}
+
+console.log(place);
+
+//o/p - mysore
+//      mumbai
+
 
 
 
