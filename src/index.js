@@ -65,43 +65,83 @@
 // console.log(address);
 
 //-------------------this keyword
-const person1 ={
-  name:"Savi",
-  walk(){
-    console.log(this);
-  },
-  };
-person1.walk();  
+// const person1 ={
+//   name:"Savi",
+//   walk(){
+//     console.log(this);
+//   },
+//   };
+// person1.walk();  
 //o/p- {"name": "Savi", walk: f}
 
 //-----BUt this keyword behaves different if called it as a reference to an object
-const person2 ={
-  name:"Savi",
-  walk(){
-    console.log(this);
-  },
-  };
-const act=person2.walk();
-console.log(act);
+// const person2 ={
+//   name:"Savi",
+//   walk(){
+//     console.log(this);
+//   },
+//   };
+// const act=person2.walk();
+// console.log(act);
 
 //Output -      {"name": "Savi", walk: f}
 //             undefined - because there is no binding
 
 //-------------binding to THIS 
 
-const person3 ={
-  name:"Savi",
-  walk(){
-    console.log(this);
-  },
-  };
+// const person3 ={
+//   name:"Savi",
+//   walk(){
+//     console.log(this);
+//   },
+//   };
 
-person3.walk();     // function in js are objects
-const walk= person3.walk.bind(person3);
-walk();  //call above const walk
+// person3.walk();     // function in js are objects
+// const walk= person3.walk.bind(person3);
+// walk();  //call above const walk
 
 //o/p-   {"name": "Savi", walk: f}
 //       {"name": "Savi", walk: f}
+
+
+//-------------------------ARROW FUNCTIONS 
+
+//----------------------- function in js are objects
+
+//js format
+const square = function(number){
+return number*number
+}
+console.log(square(7));
+
+//es 6 format for single param function - remove function kyword, remove(), add=>, remove {}, remove return
+const square1 = number=>
+number*number
+console.log(square1(5));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
