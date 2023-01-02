@@ -316,54 +316,81 @@
 // //o/p- This is in then   success
 
 //---------------------------- Promise example--with finally------------------------
-function handleJimWork() {
-  return new Promise((resolve, reject) => {
-    // Slow method that runs in the background
-    //assume doJimWork() is false;
-    const doJimWork=true;             //also test keeping it false
-    if (doJimWork===true) {
-      resolve(100)
-    } else {
-      reject("Jim broke his leg")
-    }
-  })
+// function handleJimWork() {
+//   return new Promise((resolve, reject) => {
+//     // Slow method that runs in the background
+//     //assume doJimWork() is false;
+//     const doJimWork=true;             //also test keeping it false
+//     if (doJimWork===true) {
+//       resolve(100)
+//     } else {
+//       reject("Jim broke his leg")
+//     }
+//   })
+// }
+
+// handleJimWork().then(amount => {
+//   console.log(`Jim paid you ${amount} dollars`)         //amount- is caught be param filled in resolve() funtion call
+// }).catch(reason => {
+//   console.error(`Error: ${reason}`)                     //reason- is caught be param filled in rejectS() funtion call
+// }).finally(() => {
+//   console.log("This always runs")                          //.finally() always runs 
+// })
+
+// //----------------------------promise.all()
+// function one() {
+//   return new Promise(resolve => {
+//     //doSomething()
+//     resolve("From One")
+//     console.log("inside function one ");
+//   })
+// }
+
+// function two() {
+//   return new Promise(reject => {
+//     //doSomethingElse()
+//     reject("From Two")
+//     console.log("inside function two ");
+//   })
+// }
+
+// const allPromise = Promise.all([one(),two()]);
+
+// allPromise.then(values => {
+//   console.log("inside all promises then"); // [valueOfPromise1, valueOfPromise2, ...]
+// }).catch(error => {
+//   console.log("inside all promises catch")  // rejectReason of any first rejected promise
+// }
+
+// );
+
+///------------another example- promise.all - fail-fast 
+
+function resolveTimeout(value, delay) {
+  return new Promise(
+    resolve => setTimeout(() => resolve(value), delay)
+  );
+}
+function rejectTimeout(reason, delay) {
+  return new Promise(
+    (r, reject) => setTimeout(() => reject(reason), delay)
+  );
 }
 
-handleJimWork().then(amount => {
-  console.log(`Jim paid you ${amount} dollars`)         //amount- is caught be param filled in resolve() funtion call
-}).catch(reason => {
-  console.error(`Error: ${reason}`)                     //reason- is caught be param filled in rejectS() funtion call
-}).finally(() => {
-  console.log("This always runs")                          //.finally() always runs 
-})
+const allPromise1 = Promise.all([
+  resolveTimeout(['potatoes', 'tomatoes'], 1000),
+  rejectTimeout(['oranges', 'apples'], 1000)  
+]);
+// wait...
+const lists = allPromise1;
+console.log(lists);
 
+// after 1 second
+//console.log(lists); 
+// [['potatoes', 'tomatoes'], ['oranges', 'apples']]
 
-//----------------------------promise.all()
-
-function one() {
-  return new Promise(resolve => {
-   // doSomething()
-    resolve("From One")
-  })
-}
-
-function two() {
-  return new Promise(resolve => {
-   // doSomethingElse()
-    resolve("From Two")
-  })
-}
-
-Promise.all([
-  one(),
-  two()
-]).then(messages => {
-  console.log(messages)
-  // ["From One", "From Two"]
-}).catch(error => {
-  // First error if any error
-})
-
+//  If at least one promise in the promises array rejects, 
+//then the promise returned by allPromise = Promise.all([...]) rejects too — with the same reason.
 
 
 
