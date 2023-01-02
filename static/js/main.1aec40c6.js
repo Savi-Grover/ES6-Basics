@@ -1,0 +1,2 @@
+!function(){var e,n,o=Promise.all([(e=["potatoes","tomatoes"],n=1e3,new Promise((function(o){return setTimeout((function(){return o(e)}),n)}))),function(e,n){return new Promise((function(o,t){return setTimeout((function(){return t(e)}),n)}))}(["oranges","apples"],1e3)]);console.log(o)}();
+//# sourceMappingURL=main.1aec40c6.js.map
