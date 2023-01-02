@@ -292,32 +292,77 @@
 ///----------------------------------promises
 
 
-let p = new Promise((resolve,reject)=>{
-let a = 1+1
-if (a ===2){
-  resolve('success')
+// let p = new Promise((resolve,reject)=>{
+// let a = 1+1
+// if (a ===2){
+//   resolve('success')
   
-}
-else{
-  reject('failed')
+// }
+// else{
+//   reject('failed')
  
-}
+// }
 
-})
+// })
 
-p.then((message)=>{
-console.log('This is in then   '  +message)
-}).catch((message)=>{
+// p.then((message)=>{
+// console.log('This is in then   '  +message)
+// }).catch((message)=>{
  
-  console.log('This is in Catch  '  +message)
-})
+//   console.log('This is in Catch  '  +message)
+// })
 
     
-//o/p- This is in then   success
+// //o/p- This is in then   success
+
+//---------------------------- Promise example--with finally------------------------
+function handleJimWork() {
+  return new Promise((resolve, reject) => {
+    // Slow method that runs in the background
+    //assume doJimWork() is false;
+    const doJimWork=true;             //also test keeping it false
+    if (doJimWork===true) {
+      resolve(100)
+    } else {
+      reject("Jim broke his leg")
+    }
+  })
+}
+
+handleJimWork().then(amount => {
+  console.log(`Jim paid you ${amount} dollars`)         //amount- is caught be param filled in resolve() funtion call
+}).catch(reason => {
+  console.error(`Error: ${reason}`)                     //reason- is caught be param filled in rejectS() funtion call
+}).finally(() => {
+  console.log("This always runs")                          //.finally() always runs 
+})
 
 
+//----------------------------promise.all()
 
+function one() {
+  return new Promise(resolve => {
+   // doSomething()
+    resolve("From One")
+  })
+}
 
+function two() {
+  return new Promise(resolve => {
+   // doSomethingElse()
+    resolve("From Two")
+  })
+}
+
+Promise.all([
+  one(),
+  two()
+]).then(messages => {
+  console.log(messages)
+  // ["From One", "From Two"]
+}).catch(error => {
+  // First error if any error
+})
 
 
 
